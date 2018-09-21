@@ -31,6 +31,8 @@ WORKDIR /opt/mirth-connect
 EXPOSE 8080 8443
 
 COPY docker-entrypoint.sh /
+RUN chmod +x /docker-entrypoint.sh
+RUN ls
 ENTRYPOINT ["/docker-entrypoint.sh"]
 
 CMD ["java", "-jar", "mirth-server-launcher.jar"]
